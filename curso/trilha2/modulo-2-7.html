@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2.7 Notion Productivity OS | Trilha 2</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Inter',sans-serif}.dark body{background-color:#111827}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .bg-blue-500\/20{background-color:rgba(37,99,235,.12)}html:not(.dark) .bg-blue-500\/10{background-color:rgba(37,99,235,.08)}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}
+html:not(.dark) .bg-blue-900\/20{background-color:rgba(37,99,235,.06)}html:not(.dark) .bg-blue-900\/30{background-color:rgba(37,99,235,.10)}html:not(.dark) .bg-blue-900\/40{background-color:rgba(37,99,235,.13)}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .bg-emerald-900\/20{background-color:rgba(5,150,105,.06)}html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}
+html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .bg-red-900\/20{background-color:rgba(185,28,28,.06)}html:not(.dark) .border-red-500\/30{border-color:rgba(185,28,28,.25)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/30{border-color:rgba(161,98,7,.25)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,.08)}
+html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+</style></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4"><a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">Claude Cowork</span></a><span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a></div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10"><span class="sm:hidden">T2</span><span class="hidden sm:inline">7 Skills</span></a>
+<a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Avançado</span></a>
+<button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2"><svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg><svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg></button>
+</div></div></div></nav>
+
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4"><div class="flex items-center space-x-2 text-sm text-neutral-400"><a href="../../index.html" class="hover:text-blue-400">Início</a><span>/</span><a href="index.html" class="hover:text-blue-400">Trilha 2</a><span>/</span><span class="text-blue-400">Módulo 2.7</span></div></nav>
+
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.7</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">📝 Notion Productivity OS</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Notion vira o sistema operacional do seu time, alimentado por Gmail + Calendar + conversas no Cowork. To-do dinâmico, prioridade, prazo, owner. Funciona igual com Linear, Asana, ClickUp.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">40</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Inter.</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Prático</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div></div></header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+<section id="topico-1" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span><h2 class="text-2xl font-bold">🎯 Por que Notion vira "OS"</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Maioria das pessoas usa Notion como bloco de notas. O salto é tratar como <strong class="text-blue-400">database orquestrado por Cowork</strong>: tarefas entram automaticamente de Gmail, Calendar, reuniões. Você só executa.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4">📥 De onde vêm as tarefas</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>• <strong>Gmail:</strong> emails com "?" pendente, follow-ups prometidos</li>
+<li>• <strong>Calendar:</strong> compromissos do dia/semana</li>
+<li>• <strong>Conversas Cowork:</strong> coisas que você prometeu na sessão</li>
+<li>• <strong>Slack DM:</strong> menções, perguntas diretas</li>
+<li>• <strong>Notion comments:</strong> @você em outras páginas</li>
+</ul>
+</div>
+</section>
+
+<section id="topico-2" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span><h2 class="text-2xl font-bold">🗃️ A estrutura mínima do database</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Não complica. Database com essas 6 properties resolve 80% dos casos.</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<div class="overflow-x-auto"><table class="w-full text-sm">
+<thead><tr class="border-b border-dark-600 text-blue-400"><th class="text-left py-2 pr-4">Property</th><th class="text-left py-2 pr-4">Tipo</th><th class="text-left py-2">Função</th></tr></thead>
+<tbody class="divide-y divide-dark-600">
+<tr><td class="py-3 pr-4 font-semibold">Task</td><td class="py-3 pr-4">Title</td><td class="py-3">Nome da tarefa</td></tr>
+<tr><td class="py-3 pr-4 font-semibold">Status</td><td class="py-3 pr-4">Select</td><td class="py-3">Todo / Doing / Done / Blocked</td></tr>
+<tr><td class="py-3 pr-4 font-semibold">Priority</td><td class="py-3 pr-4">Select</td><td class="py-3">P0 (urgente) / P1 / P2 / P3</td></tr>
+<tr><td class="py-3 pr-4 font-semibold">Due</td><td class="py-3 pr-4">Date</td><td class="py-3">Prazo (se aplicável)</td></tr>
+<tr><td class="py-3 pr-4 font-semibold">Owner</td><td class="py-3 pr-4">Person</td><td class="py-3">Quem faz</td></tr>
+<tr><td class="py-3 pr-4 font-semibold">Source</td><td class="py-3 pr-4">Text/URL</td><td class="py-3">De onde veio (email, reunião, etc)</td></tr>
+</tbody></table></div>
+</div>
+</section>
+
+<section id="topico-3" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span><h2 class="text-2xl font-bold">🚀 Prompt: gerar to-do do dia</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Esse é o prompt do vídeo do Jack. Roda toda manhã 7h, cria sua to-do baseado em tudo que aconteceu.</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<pre class="bg-dark-900 rounded-lg p-4 font-mono text-xs text-neutral-300 overflow-x-auto border border-dark-600">Crie uma to-do do dia no meu Notion (database "Tasks").
+
+Pra populá-la, considere:
+1. Meus emails das últimas 24h (Gmail)
+2. Meus compromissos de hoje (Google Calendar)
+3. Tudo que prometi nos chats do Cowork ontem
+4. Tasks em aberto com due date hoje/amanhã
+
+Pra cada tarefa nova:
+- Atribua priority (P0/P1/P2/P3) baseado em urgência
+- Due date (se claro)
+- Owner (eu, salvo se mencionado outro)
+- Source (email link, evento, etc)
+
+Não duplique tasks já existentes.
+Não crie tasks pra emails só de informação.
+Foco em ação requerida.
+
+Quando estiver pronto, me devolve resumo:
+- Total de tasks criadas
+- Top 3 P0 do dia
+- Conflitos de agenda detectados</pre>
+</div>
+</section>
+
+<section id="topico-4" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span><h2 class="text-2xl font-bold">👥 Modo time (Linear/Asana)</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Notion é ótimo solo/pequeno time. Pra time de engenharia, Linear é melhor. Mesma lógica, conector diferente.</p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">L</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Linear (eng/produto)</h4><p class="text-sm text-neutral-300">Cowork lê GitHub issues, PRs, mentions e cria issues no Linear. Sprint planning auto baseado em capacity.</p></div></div>
+<div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">A</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Asana / ClickUp (marketing/ops)</h4><p class="text-sm text-neutral-300">Pra time não-tech. Cowork sincroniza tasks de Gmail/Calendar e atribui por owner com regras.</p></div></div>
+<div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">M</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Híbrido (Notion + Linear)</h4><p class="text-sm text-neutral-300">Notion pra vida e business, Linear pra eng. Cowork mantém sincronizado.</p></div></div>
+</div>
+</section>
+
+<section id="topico-5" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span><h2 class="text-2xl font-bold">📊 Weekly recap automático</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Sexta 17h: Cowork puxa tudo que aconteceu na semana, gera resumo executivo. Você manda pro time/cliente em 5 min.</p>
+<div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📅</span> O recap inclui</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>• Tasks concluídas (com %)</li>
+<li>• Tasks atrasadas (com motivo)</li>
+<li>• Decisões tomadas (das conversas Cowork)</li>
+<li>• Métricas que moveram (do Mission Control)</li>
+<li>• Prioridades pra próxima semana</li>
+<li>• Bloqueios pendentes</li>
+</ul>
+</div>
+</section>
+
+<section id="topico-6" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span><h2 class="text-2xl font-bold">⚠️ Anti-padrões a evitar</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Productivity systems falham por excesso de complexidade. Os mesmos erros aparecem em todo time.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6"><h4 class="font-bold text-emerald-400 mb-4">✓ Boas práticas</h4><ul class="space-y-2 text-neutral-300 text-sm"><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>6 properties, não 20</span></li><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>P0 reservado pra raro real urgente</span></li><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Auto-archive tasks done &gt;30d</span></li><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>1 fonte da verdade por tipo de task</span></li></ul></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6"><h4 class="font-bold text-red-400 mb-4">✗ Anti-padrões</h4><ul class="space-y-2 text-neutral-300 text-sm"><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>30 properties que ninguém preenche</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Tudo é P0 (logo nada é)</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>3 sistemas paralelos não sincronizados</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Notion como "second brain" sem revisar</span></li></ul></div>
+</div>
+</section>
+
+<section class="mb-12">
+<div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📚</span> Resumo do Módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Notion como OS, não bloco de notas</strong><span class="text-neutral-400"> — orquestrado por Cowork</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">6 properties resolvem 80%</strong><span class="text-neutral-400"> — task, status, priority, due, owner, source</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">To-do diária automática</strong><span class="text-neutral-400"> — alimentada por Gmail + Calendar + Cowork</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Linear/Asana funcionam igual</strong><span class="text-neutral-400"> — escolha pelo time</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Weekly recap em 5 min</strong><span class="text-neutral-400"> — sextas 17h, pra time/cliente</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Mantenha simples</strong><span class="text-neutral-400"> — complexidade mata produtividade</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8"><h3 class="font-semibold text-blue-400 mb-2">Próxima trilha:</h3><p class="text-neutral-300">Trilha 3 — 🚀 Avançado: Workflows compostos e skills customizadas</p></div>
+<div class="flex flex-col sm:flex-row gap-4"><a href="modulo-2-6.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo anterior</a><a href="../trilha3/index.html" class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors">Trilha 3 →</a></div>
+</div></section>
+
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Claude Cowork · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026</p></div></footer>
+<script>const t=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),h=document.documentElement;if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!h.classList.contains('dark'))){d.classList.remove('hidden');h.classList.remove('dark')}else{l.classList.remove('hidden')}t.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light')});</script>
+</body></html>

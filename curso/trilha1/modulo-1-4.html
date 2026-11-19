@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.4 Conectores e MCP | Trilha 1</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Inter',sans-serif}.dark body{background-color:#111827}
+html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .bg-emerald-500\/20{background-color:rgba(5,150,105,.12)}html:not(.dark) .bg-emerald-500\/10{background-color:rgba(5,150,105,.08)}html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}
+html:not(.dark) .bg-emerald-900\/20{background-color:rgba(5,150,105,.06)}html:not(.dark) .bg-emerald-900\/30{background-color:rgba(5,150,105,.10)}html:not(.dark) .bg-emerald-900\/40{background-color:rgba(5,150,105,.13)}
+html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .bg-blue-900\/20{background-color:rgba(37,99,235,.06)}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}
+html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .bg-red-900\/20{background-color:rgba(185,28,28,.06)}html:not(.dark) .border-red-500\/30{border-color:rgba(185,28,28,.25)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/30{border-color:rgba(161,98,7,.25)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,.08)}
+html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+</style></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4"><a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">Claude Cowork</span></a><span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a></div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">7 Skills</span></a>
+<a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Avançado</span></a>
+<button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2"><svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg><svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg></button>
+</div></div></div></nav>
+
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4"><div class="flex items-center space-x-2 text-sm text-neutral-400"><a href="../../index.html" class="hover:text-emerald-400">Início</a><span>/</span><a href="index.html" class="hover:text-emerald-400">Trilha 1</a><span>/</span><span class="text-emerald-400">Módulo 1.4</span></div></nav>
+
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.4</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🔌 Conectores e MCP</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">A confusão mais comum em Cowork. Skills, Connectors e MCP fazem coisas DIFERENTES. Aqui você sai sabendo qual usar quando, instala um custom connector na prática (Apify) e entende segurança.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">40</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Técnico</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div></div></header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+<section id="topico-1" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span><h2 class="text-2xl font-bold">🧩 Skill vs Connector vs MCP</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Três conceitos, três funções complementares. Misturar é o erro #1 dos iniciantes.</p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Os três na prática</h3>
+<div class="overflow-x-auto"><table class="w-full text-sm">
+<thead><tr class="border-b border-emerald-500/30 text-emerald-400"><th class="text-left py-2 pr-4">Tipo</th><th class="text-left py-2 pr-4">O que é</th><th class="text-left py-2">Exemplo</th></tr></thead>
+<tbody class="divide-y divide-dark-600">
+<tr><td class="py-3 pr-4 font-semibold">Skill</td><td class="py-3 pr-4">Instrução procedural ("como fazer")</td><td class="py-3">"Rode trend scan no X via Grok"</td></tr>
+<tr><td class="py-3 pr-4 font-semibold">Connector</td><td class="py-3 pr-4">Ponte OAuth pra serviço externo</td><td class="py-3">Gmail, Notion, Canva</td></tr>
+<tr><td class="py-3 pr-4 font-semibold">MCP server</td><td class="py-3 pr-4">Ponte programável pra qualquer API</td><td class="py-3">stripe-mcp, postgres-mcp</td></tr>
+</tbody></table></div>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🧠</span> Regra mental</h3><p class="text-neutral-300"><strong>Skill</strong> é "como". <strong>Connector</strong> é "com o quê" (oficial). <strong>MCP</strong> é "com o quê" (custom). Skill chama Connector ou MCP — nunca o contrário.</p></div>
+</section>
+
+<section id="topico-2" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span><h2 class="text-2xl font-bold">✅ Conectores aprovados</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">A Anthropic mantém uma <strong class="text-emerald-400">lista oficial</strong> de conectores prontos via OAuth de 1 clique. Sempre que existir um oficial, use-o em vez de MCP custom.</p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-3 text-center text-sm"><div class="text-2xl mb-1">📧</div><div class="text-neutral-300">Gmail</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-3 text-center text-sm"><div class="text-2xl mb-1">📅</div><div class="text-neutral-300">Calendar</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-3 text-center text-sm"><div class="text-2xl mb-1">📂</div><div class="text-neutral-300">Drive</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-3 text-center text-sm"><div class="text-2xl mb-1">📝</div><div class="text-neutral-300">Notion</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-3 text-center text-sm"><div class="text-2xl mb-1">🎨</div><div class="text-neutral-300">Canva</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-3 text-center text-sm"><div class="text-2xl mb-1">💬</div><div class="text-neutral-300">Slack</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-3 text-center text-sm"><div class="text-2xl mb-1">📊</div><div class="text-neutral-300">HubSpot</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-3 text-center text-sm"><div class="text-2xl mb-1">🔧</div><div class="text-neutral-300">GitHub</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-3 text-center text-sm"><div class="text-2xl mb-1">📈</div><div class="text-neutral-300">Linear</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-3 text-center text-sm"><div class="text-2xl mb-1">💳</div><div class="text-neutral-300">Stripe</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-3 text-center text-sm"><div class="text-2xl mb-1">📺</div><div class="text-neutral-300">YouTube</div></div>
+<div class="bg-dark-800 rounded-lg border border-dark-600 p-3 text-center text-sm"><div class="text-2xl mb-1">🐦</div><div class="text-neutral-300">X (limit.)</div></div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6"><h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica</h3><p class="text-neutral-300">Conector oficial é mais seguro e estável que MCP custom. Token gerenciado, revogação fácil, audit log. Comece sempre por ele.</p></div>
+</section>
+
+<section id="topico-3" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span><h2 class="text-2xl font-bold">➕ Custom connector (case Apify)</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Apify não está na lista oficial. Mas é trivial adicionar como <strong class="text-emerald-400">custom connector</strong>. Esse caso vale ouro porque destrava 20k+ scrapers (Instagram, TikTok, Google Maps, etc).</p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">No Cowork: ➕ → Connectors → Manage</h4><p class="text-sm text-neutral-300">Abre o painel de conectores instalados.</p></div></div>
+<div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Add custom connector</h4><p class="text-sm text-neutral-300">Você cola o texto de configuração (Apify publica esse texto na doc deles).</p></div></div>
+<div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Connect → OAuth</h4><p class="text-sm text-neutral-300">Abre o browser, você faz login no Apify, autoriza. Não precisa API key manual.</p></div></div>
+<div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">4</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Allow access</h4><p class="text-sm text-neutral-300">Cowork volta com Apify funcionando. Teste com prompt simples antes.</p></div></div>
+</div>
+</section>
+
+<section id="topico-4" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span><h2 class="text-2xl font-bold">🔧 MCP servers: quando usar</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">MCP (Model Context Protocol) é o padrão aberto da Anthropic pra expor ferramentas a qualquer agente. Use quando: serviço não tem conector oficial, você precisa de controle fino, ou quer rodar local.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🌐</span> Onde encontrar MCPs</h3>
+<ul class="space-y-2 text-neutral-300">
+<li>• <strong>MCP Registry oficial:</strong> índice da Anthropic com servidores certificados</li>
+<li>• <strong>Comunidade no GitHub:</strong> repos públicos pra Postgres, Stripe, Supabase, Vercel, etc</li>
+<li>• <strong>Self-hosted:</strong> você escreve o MCP em Python/Node e roda local</li>
+</ul>
+</div>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-emerald-400 font-semibold mb-3">Quando MCP > Connector</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">•</span><span>API obscura sem OAuth (ex: ERPs internos)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">•</span><span>Você quer expor uma ferramenta CUSTOM (ex: seu sistema próprio)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">•</span><span>Performance crítica (MCP local, sem rede)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">•</span><span>Dados sensíveis que não podem sair da máquina</span></li>
+</ul>
+</div>
+</section>
+
+<section id="topico-5" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span><h2 class="text-2xl font-bold">🛡️ Segurança e permissões</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Princípio do menor privilégio. Cada conector pede escopos (read, write, admin). <strong class="text-emerald-400">Conceda só o que precisa.</strong></p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6"><h4 class="font-bold text-emerald-400 mb-4">✓ Boas práticas</h4><ul class="space-y-2 text-neutral-300 text-sm"><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Read-only sempre que possível</span></li><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Scope específico (ex: Gmail labels:read, não admin)</span></li><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Conta dedicada do Cowork (Gmail secundário)</span></li><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Revisar audit log mensalmente</span></li></ul></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6"><h4 class="font-bold text-red-400 mb-4">✗ Evite</h4><ul class="space-y-2 text-neutral-300 text-sm"><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Conceder admin "pra não dar erro"</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Usar mesmo Gmail pessoal + Cowork</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>API keys em prompt em texto puro</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>MCP de fonte desconhecida (revise código antes)</span></li></ul></div>
+</div>
+</section>
+
+<section id="topico-6" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span><h2 class="text-2xl font-bold">🩺 Debug: conector que não responde</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">90% dos erros são OAuth expirado ou escopo faltando. Esse checklist resolve a maioria em &lt;3 min.</p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🔍</span> Checklist de diagnóstico</h3>
+<ol class="space-y-3 text-neutral-300 list-decimal pl-5">
+<li><strong>Token expirou?</strong> Manage Connectors → reconnect.</li>
+<li><strong>Escopo certo?</strong> Verifique se o connector pede write e você só deu read.</li>
+<li><strong>Rate limit?</strong> Google/Notion têm cotas. Espere 60s e tente.</li>
+<li><strong>Conector está caído?</strong> Status page da Anthropic ou do provedor.</li>
+<li><strong>Prompt ambíguo?</strong> Teste com o mais simples possível: "Liste minhas labels do Gmail."</li>
+<li><strong>MCP local rodando?</strong> Se for MCP, confirme que o processo está vivo (ps/htop).</li>
+</ol>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atenção</h3><p class="text-neutral-300">Se o conector funcionar com prompt simples mas falhar com complexo, o problema não é conector — é o prompt. Volte pra Trilha 1 módulo 1.6.</p></div>
+</section>
+
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📚</span> Resumo do Módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">3 conceitos distintos</strong><span class="text-neutral-400"> — Skill (como), Connector (oficial), MCP (custom)</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Conectores oficiais primeiro</strong><span class="text-neutral-400"> — OAuth, gerenciados, mais seguros</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Custom connector via Apify</strong><span class="text-neutral-400"> — 20k+ scrapers em 4 cliques</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">MCP quando precisa</strong><span class="text-neutral-400"> — APIs obscuras, dados sensíveis, performance</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Menor privilégio sempre</strong><span class="text-neutral-400"> — read-only, scope específico, conta dedicada</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Debug em 6 passos</strong><span class="text-neutral-400"> — token, scope, rate, status, prompt, processo</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8"><h3 class="font-semibold text-emerald-400 mb-2">Próximo Módulo:</h3><p class="text-neutral-300">1.5 — ⏰ Tarefas agendadas e agent-to-agent</p></div>
+<div class="flex flex-col sm:flex-row gap-4"><a href="modulo-1-3.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo anterior</a><a href="modulo-1-5.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Próximo Módulo →</a></div>
+</div></section>
+
+</main>
+<footer class="border-t border-dark-600 py-8 mt-16"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Claude Cowork · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026</p></div></footer>
+<script>
+const t=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),h=document.documentElement;
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!h.classList.contains('dark'))){d.classList.remove('hidden');h.classList.remove('dark')}else{l.classList.remove('hidden')}
+t.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light')});
+</script>
+</body></html>

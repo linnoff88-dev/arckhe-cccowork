@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1.2 Setup e pastas | Trilha 1</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class',theme:{extend:{colors:{primary:'#FACC15',dark:{900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563'}}}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{font-family:'Inter',sans-serif}.dark body{background-color:#111827}
+html:not(.dark) body{background-color:#f8fafc}
+html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}
+html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}
+html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}
+html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .bg-emerald-500\/20{background-color:rgba(5,150,105,.12)}html:not(.dark) .bg-emerald-500\/10{background-color:rgba(5,150,105,.08)}html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}
+html:not(.dark) .bg-emerald-900\/20{background-color:rgba(5,150,105,.06)}html:not(.dark) .bg-emerald-900\/30{background-color:rgba(5,150,105,.10)}html:not(.dark) .bg-emerald-900\/40{background-color:rgba(5,150,105,.13)}
+html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .bg-blue-900\/20{background-color:rgba(37,99,235,.06)}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}
+html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .bg-red-900\/20{background-color:rgba(185,28,28,.06)}html:not(.dark) .border-red-500\/30{border-color:rgba(185,28,28,.25)}
+html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}
+html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/30{border-color:rgba(161,98,7,.25)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}
+html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}
+html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,.08)}
+html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,.08)}
+html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,.08)}
+html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}
+.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}
+</style></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4"><a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">Claude Cowork</span></a><span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a></div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">7 Skills</span></a>
+<a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Avançado</span></a>
+<button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2"><svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg><svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg></button>
+</div></div></div></nav>
+
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4"><div class="flex items-center space-x-2 text-sm text-neutral-400"><a href="../../index.html" class="hover:text-emerald-400">Início</a><span>/</span><a href="index.html" class="hover:text-emerald-400">Trilha 1</a><span>/</span><span class="text-emerald-400">Módulo 1.2</span></div></nav>
+
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">📁 Setup e organização de pastas</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">A estrutura de pastas que você dá ao Claude é o maior fator de qualidade do output. Esse módulo monta o seu hub de trabalho: ABOUT ME, PROJECTS, TEMPLATES, OUTPUTS.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">35</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Prático</div><div class="text-xs text-neutral-400">Tipo</div></div>
+</div></div></header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+<section id="topico-1" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span><h2 class="text-2xl font-bold">🪪 Conta, plano e Desktop App</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Sem a base certa, Cowork vira só um chat caro. Você precisa do <strong class="text-emerald-400">plano correto</strong> (Max ou superior) e do <strong class="text-emerald-400">Desktop App</strong> instalado pra ter acesso a browser real e filesystem.</p>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Checklist de pré-requisitos</h3>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">①</span><span>Conta Anthropic com plano <strong>Max</strong> ou superior (Cowork não vem no Pro padrão)</span></li>
+<li class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">②</span><span>Claude Desktop App instalado (Mac ou Windows). Web Claude é limitado.</span></li>
+<li class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">③</span><span>Permissão de acessibilidade do SO concedida (Mac: System Settings → Privacy → Accessibility)</span></li>
+<li class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">④</span><span>Pasta de trabalho criada e <strong>autorizada</strong> no Cowork (filesystem permission)</span></li>
+<li class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">⑤</span><span>Chrome instalado (Cowork prefere Chrome pra automação de browser)</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6"><h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica prática</h3><p class="text-neutral-300">Crie um perfil de Chrome dedicado pro Cowork. Mantenha logado nas contas que ele precisa operar (X, YouTube, Canva, LinkedIn). Evita pedir login no meio da tarefa.</p></div>
+</section>
+
+<section id="topico-2" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span><h2 class="text-2xl font-bold">🗂️ Estrutura ABOUT ME / PROJECTS / TEMPLATES / OUTPUTS</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Essa é a estrutura recomendada pela própria Anthropic. <strong class="text-emerald-400">Não invente outra</strong> antes de dominar essa. Funciona porque dá ao Claude um mapa previsível de onde tudo está.</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<pre class="font-mono text-sm text-neutral-300 overflow-x-auto leading-relaxed">
+~/Cowork/
+├── 📋 ABOUT ME/              ← <span class="text-emerald-400">Quem você é (lido em toda sessão)</span>
+│   ├── brand-brief.md         ← Marca, voz, tom
+│   ├── icp.md                 ← Cliente ideal
+│   ├── kpis.md                ← Métricas que importam
+│   └── competitors.md         ← Concorrentes diretos
+│
+├── 📂 PROJECTS/              ← <span class="text-emerald-400">Trabalho ativo por cliente/produto</span>
+│   ├── cliente-a/
+│   ├── produto-x/
+│   └── lancamento-2026/
+│
+├── 📦 TEMPLATES/             ← <span class="text-emerald-400">Prompts e formatos reutilizáveis</span>
+│   ├── reel-script.md
+│   ├── email-sequence.md
+│   └── blog-brief.md
+│
+└── 📤 CLAUDE OUTPUTS/        ← <span class="text-emerald-400">Entregas geradas pelo Claude</span>
+    └── (organizado por data ou projeto)
+</pre>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6"><h4 class="font-bold text-emerald-400 mb-4">✓ Por que funciona</h4><ul class="space-y-2 text-neutral-300 text-sm"><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>ABOUT ME entra em todo prompt como contexto</span></li><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>PROJECTS isola trabalho por cliente — sem vazar voz</span></li><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>TEMPLATES vira viveiro de futuras skills</span></li><li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>OUTPUTS te dá histórico pra revisar/republicar</span></li></ul></div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6"><h4 class="font-bold text-red-400 mb-4">✗ Erros comuns</h4><ul class="space-y-2 text-neutral-300 text-sm"><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Tudo numa pasta só (vira bagunça em 2 semanas)</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Nomes ambíguos ("docs", "stuff", "arquivos")</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Misturar entregas com fontes</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Falta de ABOUT ME — Claude fica genérico</span></li></ul></div>
+</div>
+</section>
+
+<section id="topico-3" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span><h2 class="text-2xl font-bold">📝 Brand brief e ICP em markdown</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Esse é o documento que mais economiza tempo. Uma página de markdown bem feita evita 80% das correções. Use o template abaixo e adapte.</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-emerald-400 font-semibold mb-3"># brand-brief.md</h3>
+<pre class="font-mono text-xs text-neutral-300 overflow-x-auto bg-dark-900 p-4 rounded border border-dark-600 leading-relaxed">
+## Quem somos
+[Nome] — [1 frase do que fazemos]
+
+## Pra quem
+ICP primário: [cargo + indústria + tamanho de empresa]
+ICP secundário: [se aplicar]
+
+## Voz e tom
+- Direto, sem jargão
+- Tom: [confiante / didático / provocador]
+- Pessoa: 1ª plural ("nós") ou 1ª singular ("eu")
+- Proibido: [emojis / superlativos / clichês X, Y, Z]
+
+## KPIs que medimos
+- North star: [métrica única]
+- Suporte: [3-5 outras]
+
+## Concorrentes diretos
+1. [Nome] — diferencial deles
+2. [Nome] — diferencial deles
+
+## Coisas que NUNCA dizemos
+- "Revolucionário"
+- "Game-changer"
+- [outros]
+</pre>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6"><h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚡</span> Atalho</h3><p class="text-neutral-300">Não escreva isso na mão. Peça pro Cowork entrevistar você: "Quero criar meu brand-brief.md. Me faça 10 perguntas de cada vez. Quando tiver dados o suficiente, gera o markdown." Funciona muito melhor.</p></div>
+</section>
+
+<section id="topico-4" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span><h2 class="text-2xl font-bold">📦 Templates reutilizáveis</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Templates são a <strong class="text-emerald-400">versão 0 de skills</strong>. Você cria como markdown na pasta TEMPLATES, usa por algumas semanas, refina — e quando estabilizar, vira SKILL.md.</p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Reel script (curto/vertical)</h4><p class="text-sm text-neutral-300">Hook (3s) → desenvolvimento (15s) → CTA. Sempre 30-45s no total.</p></div></div>
+<div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Email sequence (5 emails)</h4><p class="text-sm text-neutral-300">D+0 welcome, D+2 story, D+5 valor, D+8 social proof, D+12 oferta.</p></div></div>
+<div class="flex items-start space-x-4"><div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div><div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Brief de blog</h4><p class="text-sm text-neutral-300">Título, ângulo único, audiência, 3 keywords primárias, CTAs.</p></div></div>
+</div>
+</section>
+
+<section id="topico-5" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span><h2 class="text-2xl font-bold">🔐 Onde guardar (Drive, Dropbox, local)</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Cowork lê via filesystem do seu computador. Então tudo precisa estar <strong class="text-emerald-400">sincronizado localmente</strong>. As 3 opções vivem em equilíbrio diferente entre conveniência e velocidade.</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> Comparativo</h3>
+<div class="overflow-x-auto"><table class="w-full text-sm">
+<thead><tr class="border-b border-blue-500/30 text-blue-400"><th class="text-left py-2 pr-4">Opção</th><th class="text-left py-2 pr-4">Velocidade</th><th class="text-left py-2 pr-4">Multi-device</th><th class="text-left py-2">Recomendado pra</th></tr></thead>
+<tbody class="divide-y divide-dark-600">
+<tr><td class="py-3 pr-4 font-semibold">Local puro</td><td class="py-3 pr-4">⚡⚡⚡</td><td class="py-3 pr-4">❌</td><td class="py-3">Quem só trabalha em 1 máquina</td></tr>
+<tr><td class="py-3 pr-4 font-semibold">Google Drive</td><td class="py-3 pr-4">⚡⚡</td><td class="py-3 pr-4">✅</td><td class="py-3">Padrão. Mistura bem com Workspace</td></tr>
+<tr><td class="py-3 pr-4 font-semibold">Dropbox / iCloud</td><td class="py-3 pr-4">⚡⚡</td><td class="py-3 pr-4">✅</td><td class="py-3">Quem já está no ecossistema</td></tr>
+</tbody></table></div>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Atenção</h3><p class="text-neutral-300">Nunca coloque arquivos com credenciais (API keys, .env, senhas) na pasta Cowork. Mesmo que o agente seja confiável, vaza facilmente em logs e prints.</p></div>
+</section>
+
+<section id="topico-6" class="mb-16">
+<div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span><h2 class="text-2xl font-bold">🧪 Primeiro teste com sua pasta</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Valide o setup antes de partir pra coisas complexas. Esse prompt confirma que Cowork tem permissão de filesystem e que seu brief está acessível.</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-emerald-400 font-semibold mb-3">Prompt de validação</h3>
+<pre class="bg-dark-900 rounded-lg p-4 font-mono text-sm text-neutral-300 overflow-x-auto border border-dark-600">Oi! Leia minha pasta ~/Cowork/ABOUT ME e me responda:
+
+1. Quem sou eu (1 parágrafo)?
+2. Qual meu ICP primário?
+3. Quais meus 3 KPIs principais?
+4. Quais são minhas regras de voz (do/don't)?
+
+Se algum arquivo estiver faltando, me diga qual.</pre>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">✅</span> O que esperar</h3><p class="text-neutral-300">Cowork deve responder em menos de 30s com resumo preciso. Se vier genérico, seu brief está raso — refine. Se reclamar de permissão, autorize a pasta no Desktop App.</p></div>
+</section>
+
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">📚</span> Resumo do Módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Plano + Desktop App</strong><span class="text-neutral-400"> — sem isso, Cowork é só chat</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Estrutura padrão</strong><span class="text-neutral-400"> — ABOUT ME / PROJECTS / TEMPLATES / OUTPUTS</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Brand brief de 1 página</strong><span class="text-neutral-400"> — destrava qualidade do output</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Templates = embrião de skills</strong><span class="text-neutral-400"> — refine antes de cristalizar</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Sincronização</strong><span class="text-neutral-400"> — Drive/Dropbox/iCloud, nunca credenciais juntas</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Validação por prompt</strong><span class="text-neutral-400"> — teste a leitura antes de partir pra tarefa real</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8"><h3 class="font-semibold text-emerald-400 mb-2">Próximo Módulo:</h3><p class="text-neutral-300">1.3 — 📜 Anatomia de uma Skill</p></div>
+<div class="flex flex-col sm:flex-row gap-4"><a href="modulo-1-1.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo anterior</a><a href="modulo-1-3.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Próximo Módulo →</a></div>
+</div></section>
+
+</main>
+
+<footer class="border-t border-dark-600 py-8 mt-16"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Claude Cowork · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026</p></div></footer>
+
+<script>
+const t=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),h=document.documentElement;
+if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!h.classList.contains('dark'))){d.classList.remove('hidden');h.classList.remove('dark')}else{l.classList.remove('hidden')}
+t.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light')});
+</script>
+</body></html>
