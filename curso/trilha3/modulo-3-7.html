@@ -9,31 +9,31 @@
 <style>body{font-family:'Inter',sans-serif}.dark body{background-color:#111827}html:not(.dark) body{background-color:#f8fafc}html:not(.dark) .bg-dark-900{background-color:#fff}html:not(.dark) .bg-dark-800{background-color:#f9fafb}html:not(.dark) .bg-dark-700{background-color:#f3f4f6}html:not(.dark) .bg-dark-600{background-color:#e5e7eb}html:not(.dark) .text-neutral-100{color:#111827}html:not(.dark) .text-neutral-300{color:#4b5563}html:not(.dark) .text-neutral-400{color:#6b7280}html:not(.dark) .text-neutral-500{color:#9ca3af}html:not(.dark) .border-dark-600{border-color:#d1d5db}html:not(.dark) .border-dark-700{border-color:#e5e7eb}html:not(.dark) .text-purple-400{color:#7c3aed}html:not(.dark) .bg-purple-500\/20{background-color:rgba(124,58,237,.12)}html:not(.dark) .bg-purple-500\/10{background-color:rgba(124,58,237,.08)}html:not(.dark) .border-purple-500\/30{border-color:rgba(124,58,237,.25)}html:not(.dark) .bg-purple-900\/20{background-color:rgba(124,58,237,.06)}html:not(.dark) .bg-purple-900\/30{background-color:rgba(124,58,237,.10)}html:not(.dark) .bg-purple-900\/40{background-color:rgba(124,58,237,.13)}html:not(.dark) .text-emerald-400{color:#059669}html:not(.dark) .bg-emerald-900\/20{background-color:rgba(5,150,105,.06)}html:not(.dark) .border-emerald-500\/30{border-color:rgba(5,150,105,.25)}html:not(.dark) .text-blue-400{color:#2563eb}html:not(.dark) .bg-blue-900\/20{background-color:rgba(37,99,235,.06)}html:not(.dark) .border-blue-500\/30{border-color:rgba(37,99,235,.25)}html:not(.dark) .text-red-400{color:#b91c1c}html:not(.dark) .bg-red-900\/20{background-color:rgba(185,28,28,.06)}html:not(.dark) .border-red-500\/30{border-color:rgba(185,28,28,.25)}html:not(.dark) [class*="bg-gradient-to"]{background-image:none!important}html:not(.dark) .text-primary{color:#a16207}html:not(.dark) .bg-primary\/10{background-color:rgba(161,98,7,.08)}html:not(.dark) .border-primary\/30{border-color:rgba(161,98,7,.25)}html:not(.dark) .border-primary\/40{border-color:rgba(161,98,7,.25)}html:not(.dark) .text-sky-400{color:#0369a1}html:not(.dark) .text-yellow-400{color:#a16207}html:not(.dark) .hover\:text-sky-300:hover{color:#0284c7}html:not(.dark) .hover\:text-yellow-300:hover{color:#854d0e}html:not(.dark) .hover\:text-emerald-400:hover{color:#059669}html:not(.dark) .hover\:bg-emerald-500\/10:hover{background-color:rgba(5,150,105,.08)}html:not(.dark) .hover\:text-blue-400:hover{color:#2563eb}html:not(.dark) .hover\:bg-blue-500\/10:hover{background-color:rgba(37,99,235,.08)}html:not(.dark) .hover\:text-purple-400:hover{color:#7c3aed}html:not(.dark) .hover\:bg-purple-500\/10:hover{background-color:rgba(124,58,237,.08)}html:not(.dark) .bg-dark-900\/95{background-color:rgba(255,255,255,.95)}.dark .border-dark-600{border-color:#374151}.dark .divide-dark-600>:not([hidden])~:not([hidden]){border-color:#374151}</style></head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
 
-<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14"><div class="flex items-center space-x-4"><a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">🤖</span><span class="font-bold text-lg hidden sm:inline">Claude Cowork</span></a><span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a></div><div class="flex items-center space-x-1 sm:space-x-2"><a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a><a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">7 Skills</span></a><a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Avançado</span></a><button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2"><svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg><svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg></button></div></div></div></nav>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14"><div class="flex items-center space-x-4"><a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">ðŸ¤–</span><span class="font-bold text-lg hidden sm:inline">Claude Cowork</span></a><span class="text-neutral-600">|</span><a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">ARCKHÉ AI</a></div><div class="flex items-center space-x-1 sm:space-x-2"><a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a><a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">7 Skills</span></a><a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10"><span class="sm:hidden">T3</span><span class="hidden sm:inline">AvanÃ§ado</span></a><button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2"><svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg><svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg></button></div></div></div></nav>
 
-<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4"><div class="flex items-center space-x-2 text-sm text-neutral-400"><a href="../../index.html" class="hover:text-purple-400">Início</a><span>/</span><a href="index.html" class="hover:text-purple-400">Trilha 3</a><span>/</span><span class="text-purple-400">Módulo 3.7</span></div></nav>
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4"><div class="flex items-center space-x-2 text-sm text-neutral-400"><a href="../../index.html" class="hover:text-purple-400">InÃ­cio</a><span>/</span><a href="index.html" class="hover:text-purple-400">Trilha 3</a><span>/</span><span class="text-purple-400">MÃ³dulo 3.7</span></div></nav>
 
-<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÓDULO 3.7</span><h1 class="text-3xl sm:text-4xl font-bold mb-4">🛠️ Skill custom do zero (skill-creator)</h1><p class="text-lg text-neutral-400 max-w-3xl">O módulo final: você sai com sua skill, evals validados, publicada no seu repo. Fluxo end-to-end de criar skill — sem escrever YAML manualmente, sem decorar formato.</p><div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl"><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">50</div><div class="text-xs text-neutral-400">Minutos</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Avanç.</div><div class="text-xs text-neutral-400">Nível</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Hands-on</div><div class="text-xs text-neutral-400">Tipo</div></div></div></div></header>
+<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÃ“DULO 3.7</span><h1 class="text-3xl sm:text-4xl font-bold mb-4">ðŸ› ï¸ Skill custom do zero (skill-creator)</h1><p class="text-lg text-neutral-400 max-w-3xl">O mÃ³dulo final: vocÃª sai com sua skill, evals validados, publicada no seu repo. Fluxo end-to-end de criar skill â€” sem escrever YAML manualmente, sem decorar formato.</p><div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl"><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">TÃ³picos</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">50</div><div class="text-xs text-neutral-400">Minutos</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">AvanÃ§.</div><div class="text-xs text-neutral-400">NÃ­vel</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Hands-on</div><div class="text-xs text-neutral-400">Tipo</div></div></div></div></header>
 
 <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-<section id="topico-1" class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span><h2 class="text-2xl font-bold">🧭 De prompt repetido pra skill</h2></div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Você sabe que tem uma skill <strong class="text-purple-400">quando</strong> roda o mesmo prompt 3-5 vezes com resultado consistente. Antes disso, é template. Depois, vira SKILL.md.</p>
-<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-emerald-400 mb-4">✅ Sinais que a skill estabilizou</h3><ul class="space-y-2 text-neutral-300"><li>• Você roda o mesmo "padrão" 3-5 vezes</li><li>• Output consistente entre execuções</li><li>• Você sabe descrever <em>quando</em> usar ("use this when X")</li><li>• Existem variáveis claras (nicho, audiência, output format)</li><li>• Você corrigiria as mesmas coisas a cada vez</li></ul></div></section>
+<section id="topico-1" class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span><h2 class="text-2xl font-bold">ðŸ§­ De prompt repetido pra skill</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">VocÃª sabe que tem uma skill <strong class="text-purple-400">quando</strong> roda o mesmo prompt 3-5 vezes com resultado consistente. Antes disso, Ã© template. Depois, vira SKILL.md.</p>
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-emerald-400 mb-4">âœ… Sinais que a skill estabilizou</h3><ul class="space-y-2 text-neutral-300"><li>â€¢ VocÃª roda o mesmo "padrÃ£o" 3-5 vezes</li><li>â€¢ Output consistente entre execuÃ§Ãµes</li><li>â€¢ VocÃª sabe descrever <em>quando</em> usar ("use this when X")</li><li>â€¢ Existem variÃ¡veis claras (nicho, audiÃªncia, output format)</li><li>â€¢ VocÃª corrigiria as mesmas coisas a cada vez</li></ul></div></section>
 
-<section id="topico-2" class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span><h2 class="text-2xl font-bold">🚀 Invocar skill-creator</h2></div>
-<p class="text-neutral-300 mb-6 leading-relaxed">A meta-skill oficial da Anthropic. Pegue um prompt seu que está rodando bem e peça pra cristalizar.</p>
+<section id="topico-2" class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span><h2 class="text-2xl font-bold">ðŸš€ Invocar skill-creator</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">A meta-skill oficial da Anthropic. Pegue um prompt seu que estÃ¡ rodando bem e peÃ§a pra cristalizar.</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6"><pre class="bg-dark-900 rounded-lg p-4 font-mono text-xs text-neutral-300 overflow-x-auto border border-dark-600">Quero criar uma skill nova.
 
 Nome sugerido: weekly-recap
 
-Use case: toda sexta 18h, ler meu calendário, emails
-enviados/recebidos, tasks concluídas no Notion. Gerar
-recap executivo de 1 página com:
+Use case: toda sexta 18h, ler meu calendÃ¡rio, emails
+enviados/recebidos, tasks concluÃ­das no Notion. Gerar
+recap executivo de 1 pÃ¡gina com:
 - 3 wins da semana
-- 2 frustrações
-- Métricas que moveram
-- 3 prioridades pra próxima semana
+- 2 frustraÃ§Ãµes
+- MÃ©tricas que moveram
+- 3 prioridades pra prÃ³xima semana
 
 Use skill-creator pra:
 1. Me entrevistar pra capturar todos os detalhes
@@ -43,8 +43,8 @@ Use skill-creator pra:
 
 Salva em ~/Cowork/skills/weekly-recap/</pre></div></section>
 
-<section id="topico-3" class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span><h2 class="text-2xl font-bold">📝 Anatomia do SKILL.md gerado</h2></div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Esse é o template que skill-creator gera. Estude pra entender — eventualmente você edita à mão.</p>
+<section id="topico-3" class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span><h2 class="text-2xl font-bold">ðŸ“ Anatomia do SKILL.md gerado</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Esse Ã© o template que skill-creator gera. Estude pra entender â€” eventualmente vocÃª edita Ã  mÃ£o.</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6"><pre class="bg-dark-900 rounded-lg p-4 font-mono text-xs text-neutral-300 overflow-x-auto border border-dark-600">---
 name: weekly-recap
 description: Use this skill when the user wants a Friday weekly recap. Triggers on phrases like "weekly recap", "wrap up the week", "what happened this week". Pulls data from Calendar, Gmail, Notion tasks. Outputs 1-page executive summary with wins, frustrations, metrics, next-week priorities.
@@ -60,7 +60,7 @@ description: Use this skill when the user wants a Friday weekly recap. Triggers 
 ## Inputs needed
 - {user_name}: nome pra personalizar
 - {week_range}: "Mon-Fri" ou custom
-- {focus_areas}: 3-5 áreas que importam pro user
+- {focus_areas}: 3-5 Ã¡reas que importam pro user
 
 ## Process
 
@@ -74,15 +74,15 @@ description: Use this skill when the user wants a Friday weekly recap. Triggers 
 2. **Analyze**:
    - Identify 3 wins (tasks done que importam)
    - Identify 2 frustrations (blocked, recorrente)
-   - Calculate métricas que moveram
+   - Calculate mÃ©tricas que moveram
    - Extract recurring themes
 
 3. **Compose recap** (formato markdown):
    - Header: Week of {date}
    - Wins (bullets, 1-line each, com emoji)
-   - Frustrations (bullets, com hipótese de causa)
+   - Frustrations (bullets, com hipÃ³tese de causa)
    - Metrics (table)
-   - Next week priorities (top 3, com porquê)
+   - Next week priorities (top 3, com porquÃª)
 
 4. **Output**:
    - Save to ~/Cowork/OUTPUTS/recap-YYYY-MM-DD.md
@@ -90,53 +90,53 @@ description: Use this skill when the user wants a Friday weekly recap. Triggers 
    - Post summary to Slack #personal (if connected)
 
 ## Tone
-Direct, honest. Não embeleze frustrações. Não diminua wins.</pre></div></section>
+Direct, honest. NÃ£o embeleze frustraÃ§Ãµes. NÃ£o diminua wins.</pre></div></section>
 
-<section id="topico-4" class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span><h2 class="text-2xl font-bold">🧪 Rodar evals (validação)</h2></div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Evals comparam: output COM a skill vs SEM a skill. Se a skill não ganha, descarta. Não dá pra confiar em "achismo".</p>
-<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-blue-400 mb-4">📊 O que evals medem</h3><ul class="space-y-2 text-neutral-300"><li>• <strong>Trigger precision:</strong> dispara quando deveria? Não dispara quando não deveria?</li><li>• <strong>Quality vs baseline:</strong> output melhor que prompt direto?</li><li>• <strong>Token efficiency:</strong> resolve em menos passos?</li><li>• <strong>No regression:</strong> não quebrou outras skills?</li></ul></div></section>
+<section id="topico-4" class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span><h2 class="text-2xl font-bold">ðŸ§ª Rodar evals (validaÃ§Ã£o)</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Evals comparam: output COM a skill vs SEM a skill. Se a skill nÃ£o ganha, descarta. NÃ£o dÃ¡ pra confiar em "achismo".</p>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-blue-400 mb-4">ðŸ“Š O que evals medem</h3><ul class="space-y-2 text-neutral-300"><li>â€¢ <strong>Trigger precision:</strong> dispara quando deveria? NÃ£o dispara quando nÃ£o deveria?</li><li>â€¢ <strong>Quality vs baseline:</strong> output melhor que prompt direto?</li><li>â€¢ <strong>Token efficiency:</strong> resolve em menos passos?</li><li>â€¢ <strong>No regression:</strong> nÃ£o quebrou outras skills?</li></ul></div></section>
 
-<section id="topico-5" class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span><h2 class="text-2xl font-bold">📤 Publicar (privado ou comunidade)</h2></div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Skill validada → push pro GitHub. Opção 1: repo privado (uso pessoal). Opção 2: público (contribui pra comunidade).</p>
+<section id="topico-5" class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span><h2 class="text-2xl font-bold">ðŸ“¤ Publicar (privado ou comunidade)</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Skill validada â†’ push pro GitHub. OpÃ§Ã£o 1: repo privado (uso pessoal). OpÃ§Ã£o 2: pÃºblico (contribui pra comunidade).</p>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6"><pre class="bg-dark-900 rounded-lg p-4 font-mono text-xs text-neutral-300 overflow-x-auto border border-dark-600">~/Cowork/skills/weekly-recap/
-├── SKILL.md
-├── README.md            ← <span class="text-purple-400">docs pra outros usuários</span>
-├── install.sh           ← <span class="text-purple-400">one-line install</span>
-├── references/
-│   └── format-spec.md
-├── examples/
-│   ├── recap-2026-01-12.md  ← <span class="text-purple-400">3 outputs reais (anonimizados)</span>
-│   └── ...
-├── evals/
-│   └── test-cases.json
-└── LICENSE              ← <span class="text-purple-400">MIT recomendado pra comunidade</span></pre></div></section>
+â”œâ”€â”€ SKILL.md
+â”œâ”€â”€ README.md            â† <span class="text-purple-400">docs pra outros usuÃ¡rios</span>
+â”œâ”€â”€ install.sh           â† <span class="text-purple-400">one-line install</span>
+â”œâ”€â”€ references/
+â”‚   â””â”€â”€ format-spec.md
+â”œâ”€â”€ examples/
+â”‚   â”œâ”€â”€ recap-2026-01-12.md  â† <span class="text-purple-400">3 outputs reais (anonimizados)</span>
+â”‚   â””â”€â”€ ...
+â”œâ”€â”€ evals/
+â”‚   â””â”€â”€ test-cases.json
+â””â”€â”€ LICENSE              â† <span class="text-purple-400">MIT recomendado pra comunidade</span></pre></div></section>
 
-<section id="topico-6" class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span><h2 class="text-2xl font-bold">🌍 Você agora é arquiteto de agentes</h2></div>
-<p class="text-neutral-300 mb-6 leading-relaxed">Esse é o ponto onde você sai de "usuário de Cowork" pra <strong class="text-purple-400">arquiteto de agentes</strong>. Você não consome skills — você cria, valida e distribui.</p>
-<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">🚀</span> Próximos passos</h3><ul class="space-y-2 text-neutral-300"><li>• <strong>1 skill por semana</strong> nas primeiras 4 semanas</li><li>• Audite quais prompts você repete — vira skill</li><li>• Contribua 1 skill pra comunidade trimestralmente</li><li>• Construa multi-agente (Trilha 3.1) pro caso mais complexo seu</li><li>• Compartilhe seu repo no Twitter — você vira referência</li></ul></div>
-<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6"><h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💎</span> Reflexão final</h3><p class="text-neutral-300">O curso te dá a base. Os próximos 6-12 meses são onde você vira diferenciado. A janela competitiva é AGORA, em 2026. Quem aprender Cowork bem nesse período vai liderar o mercado em 2027-28.</p></div></section>
+<section id="topico-6" class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span><h2 class="text-2xl font-bold">ðŸŒ VocÃª agora Ã© arquiteto de agentes</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Esse Ã© o ponto onde vocÃª sai de "usuÃ¡rio de Cowork" pra <strong class="text-purple-400">arquiteto de agentes</strong>. VocÃª nÃ£o consome skills â€” vocÃª cria, valida e distribui.</p>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6"><h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">ðŸš€</span> PrÃ³ximos passos</h3><ul class="space-y-2 text-neutral-300"><li>â€¢ <strong>1 skill por semana</strong> nas primeiras 4 semanas</li><li>â€¢ Audite quais prompts vocÃª repete â€” vira skill</li><li>â€¢ Contribua 1 skill pra comunidade trimestralmente</li><li>â€¢ Construa multi-agente (Trilha 3.1) pro caso mais complexo seu</li><li>â€¢ Compartilhe seu repo no Twitter â€” vocÃª vira referÃªncia</li></ul></div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6"><h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">ðŸ’Ž</span> ReflexÃ£o final</h3><p class="text-neutral-300">O curso te dÃ¡ a base. Os prÃ³ximos 6-12 meses sÃ£o onde vocÃª vira diferenciado. A janela competitiva Ã© AGORA, em 2026. Quem aprender Cowork bem nesse perÃ­odo vai liderar o mercado em 2027-28.</p></div></section>
 
-<section class="mb-12"><div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8"><h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">🎓</span> Resumo do Módulo Final</h2><div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Prompt estabilizado vira skill</strong><span class="text-neutral-400"> — 3-5 execuções consistentes</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">skill-creator gera SKILL.md</strong><span class="text-neutral-400"> — entrevista guiada, sem YAML manual</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Anatomia: name, description, process</strong><span class="text-neutral-400"> — eventualmente você edita à mão</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Run evals = não opcional</strong><span class="text-neutral-400"> — skill que não vence baseline é ruído</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Publicar: privado ou comunidade</strong><span class="text-neutral-400"> — examples + evals + README</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Você agora é arquiteto</strong><span class="text-neutral-400"> — cria, valida, distribui</span></div></div>
+<section class="mb-12"><div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8"><h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">ðŸŽ“</span> Resumo do MÃ³dulo Final</h2><div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-white">Prompt estabilizado vira skill</strong><span class="text-neutral-400"> â€” 3-5 execuÃ§Ãµes consistentes</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-white">skill-creator gera SKILL.md</strong><span class="text-neutral-400"> â€” entrevista guiada, sem YAML manual</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-white">Anatomia: name, description, process</strong><span class="text-neutral-400"> â€” eventualmente vocÃª edita Ã  mÃ£o</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-white">Run evals = nÃ£o opcional</strong><span class="text-neutral-400"> â€” skill que nÃ£o vence baseline Ã© ruÃ­do</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-white">Publicar: privado ou comunidade</strong><span class="text-neutral-400"> â€” examples + evals + README</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">âœ“</span><div><strong class="text-white">VocÃª agora Ã© arquiteto</strong><span class="text-neutral-400"> â€” cria, valida, distribui</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-6 mb-8">
-<h3 class="font-semibold text-purple-400 mb-3 text-lg">🎉 Você completou o curso!</h3>
-<p class="text-neutral-300 mb-3">Trilhas concluídas:</p>
+<h3 class="font-semibold text-purple-400 mb-3 text-lg">ðŸŽ‰ VocÃª completou o curso!</h3>
+<p class="text-neutral-300 mb-3">Trilhas concluÃ­das:</p>
 <ul class="space-y-1 text-sm text-neutral-300">
-<li>✓ Trilha 1 — Fundamentos (6 módulos)</li>
-<li>✓ Trilha 2 — 7 Skills de Marketing (7 módulos)</li>
-<li>✓ Trilha 3 — Avançado (7 módulos)</li>
+<li>âœ“ Trilha 1 â€” Fundamentos (6 mÃ³dulos)</li>
+<li>âœ“ Trilha 2 â€” 7 Skills de Marketing (7 mÃ³dulos)</li>
+<li>âœ“ Trilha 3 â€” AvanÃ§ado (7 mÃ³dulos)</li>
 </ul>
-<p class="text-neutral-400 mt-4 text-sm">20 módulos · 120+ tópicos · ~14h de conteúdo. Bem-vindo à era do operador de agentes.</p>
+<p class="text-neutral-400 mt-4 text-sm">20 mÃ³dulos Â· 120+ tÃ³picos Â· ~14h de conteÃºdo. Bem-vindo Ã  era do operador de agentes.</p>
 </div>
-<div class="flex flex-col sm:flex-row gap-4"><a href="modulo-3-6.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo anterior</a><a href="../../index.html" class="flex-1 text-center px-6 py-3 bg-primary text-dark-900 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">🏠 Voltar à página inicial</a></div></div></section>
+<div class="flex flex-col sm:flex-row gap-4"><a href="modulo-3-6.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">â† MÃ³dulo anterior</a><a href="../../index.html" class="flex-1 text-center px-6 py-3 bg-primary text-dark-900 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">ðŸ  Voltar Ã  pÃ¡gina inicial</a></div></div></section>
 
 </main>
-<footer class="border-t border-dark-600 py-8 mt-16"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Claude Cowork · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> · 2026</p></div></footer>
+<footer class="border-t border-dark-600 py-8 mt-16"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Claude Cowork Â· <a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300">ARCKHÉ AI</a> Â· 2026</p></div></footer>
 <script>const t=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),h=document.documentElement;if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!h.classList.contains('dark'))){d.classList.remove('hidden');h.classList.remove('dark')}else{l.classList.remove('hidden')}t.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light')});</script>
 </body></html>
